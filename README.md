@@ -1,4 +1,4 @@
-# 🍳 Group-G — *The Chefs*
+# 🍳 Group-G —     👨‍🍳  *The Chefs*  👩‍🍳
 
 > “Cooking up ideas, serving innovation.” 👨‍🍳👩‍🍳
 
