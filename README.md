@@ -18,14 +18,8 @@
 ---
 
 ## 🧭 **Team Mission**
-> To design and develop a system that blends usability, performance, and creativity —  
-> .......................
+> To design and develop a system that blends usability, performance, and creativity into one application.
+> Our team proposes the development of a dedicated web-based digital cookbook that allows users to seamlessly capture TikTok recipes, organize them into custom categories, and generate integrated grocery lists, thereby bridging the gap between recipe discovery and execution.
+
 
 ---
-
-## 🧑‍🍳 **Project Motto??**
-> *...................*
-
----
-
-✨ *working on it.........*
