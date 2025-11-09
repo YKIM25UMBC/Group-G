@@ -14,6 +14,8 @@
     th, td { border: 1px solid #ccc; padding: 0.4em 0.6em; }
     th { background: #e4e8f3; }
     .features li { margin-bottom: 0.3em; }
+    .db-table { font-size: 0.96em; }
+    .code-block { background: #f3f4fa; border: 1px solid #d3d4e0; border-radius: 6px; padding: 0.7em 1em; margin: 1em 0; overflow-x: auto; }
   </style>
 </head>
 <body>
@@ -64,6 +66,44 @@
       <li><b>Mobile-friendly</b>: All features are optimized for use in the kitchen on modern browsers and mobile devices.</li>
       <li><b>Original video linking</b>: Each recipe card preserves the original TikTok video for easy reference and creator attribution.</li>
     </ul>
+  </div>
+  <div class="section">
+    <h2>Database Overview</h2>
+    <ul>
+      <li><b>Database Type:</b> PostgreSQL (running in Docker containers)</li>
+      <li><b>Main tables:</b> users, recipes, ingredients, categories, grocery_lists, grocery_list_items</li>
+    </ul>
+    <div class="code-block">
+      <b>Excerpt from <code>docker-compose.yml</code>:</b><br>
+      <pre>
+services:
+  db:
+    image: postgres:15
+    container_name: digitalcookbookdb
+    environment:
+      POSTGRES_USER: chefuser
+      POSTGRES_PASSWORD: cookbook123
+      POSTGRES_DB: digitalcookbook
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./init-db:/docker-entrypoint-initdb.d
+      </pre>
+    </div>
+    <table class="db-table">
+      <tr><th>Table</th><th>Purpose</th></tr>
+      <tr><td>users</td><td>User authentication and profile management (username, email, password hash)</td></tr>
+      <tr><td>categories</td><td>Recipe grouping and user-created categories</td></tr>
+      <tr><td>recipes</td><td>Recipe information, TikTok URL, description, and metadata</td></tr>
+      <tr><td>ingredients</td><td>Ingredients for each recipe</td></tr>
+      <tr><td>grocery_lists</td><td>User-created shopping lists</td></tr>
+      <tr><td>grocery_list_items</td><td>Individual ingredients included in grocery lists</td></tr>
+    </table>
+    <p>
+      See <b>01_create_tables.sql</b> for the full schema, <b>02_insert_data.sql</b> for sample data.<br>
+      For setup and usage details, see <b>README.md</b>.
+    </p>
   </div>
   <footer>
     <hr>
