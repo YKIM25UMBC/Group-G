@@ -11,8 +11,9 @@ An intelligent inventory, pricing, and operations management platform designed f
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Demo Examples](#demo-examples)
 - [Deployment](#deployment)
+- [Demo Examples](#demo-examples)
+- [Configuration](#configuration)
 
 ---
 
@@ -65,6 +66,41 @@ Using **AI models**, **Streamlit UI**, and **MCP servers**, the system helps bus
 ### **2. Install Required Python Packages**
 ```bash
 pip install streamlit pandas sqlite3
+````
 **Local Deployment:**
 ```bash
+# Clone the repository
+git clone https://github.com/yourusername/deli_store_system.git
+cd deli_store_system
+
+# Create virtual environment (optional)
+python -m venv .venv
+
+# Activate virtual environment
+# Windows:
+.venv\Scripts\activate
+# Mac/Linux:
+source .venv/bin/activate
+
+# Install dependencies
+pip install streamlit pandas sqlite3
+````
+**Docker Deployment:**
+```bash
+docker-compose up -d
 streamlit run app.py
+````
+---
+### **Demo Examples:**
+
+- **Inventory Lookup** — Search for "Jack Daniels" 
+- **Price Analysis** — sample_invoice.csv  
+- **Add Products**
+---
+## ⚙️ Configuration
+### Database Settings:
+- **Default:** SQLite (included)
+- **Production:** Update connection string in app.py
+### MCP Servers
+- Enable in docker-compose.yml
+- Configure ports in application settings
