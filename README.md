@@ -1,25 +1,70 @@
-# 🍳 Group-G —     👨‍🍳  *The Chefs*  👩‍🍳
+# AI-Powered Deli & Liquor Store Management System
 
-> “Cooking up ideas, serving innovation.” 👨‍🍳👩‍🍳
-
----
-
-## 👥 **Team Members & Roles**
-
-| Name | Role | Description |
-|------|------|-------------|
-| **Young Kim** | 🧪 *Quality Assurance* | Ensures the system runs smoothly and meets project standards. |
-| **Jennah Rashed** | 🗂️ *Project Manager* | Oversees project timeline, coordinates tasks, and manages communication. |
-| **Gabriela Corea** | 🎨 *Frontend Designer (UX/UI)* | Designs intuitive user interfaces and enhances user experience. |
-| **Eiman Babar** | 💼 *Business Analyst* | Defines project goals, requirements, and ensures business alignment. |
-| **Christopher Ajayi** | ⚙️ *DevOps Engineer* | Manages deployment, CI/CD pipeline, and system infrastructure. |
-| **Drew Beall** | 💻 *Backend Developer* | Builds and maintains the server, API, and database logic. |
+An intelligent inventory, pricing, and operations management platform designed for retail liquor stores and delis. This system uses **AI-driven analysis** and **MCP (Model Context Protocol) servers** to automate workflows, optimize pricing, detect margin loss, and improve overall store efficiency.
 
 ---
 
-## 🧭 **Team Mission**
-> To design and develop a system that blends usability, performance, and creativity into one application.
-> Our team proposes the development of a dedicated web-based digital cookbook that allows users to seamlessly capture TikTok recipes, organize them into custom categories, and generate integrated grocery lists, thereby bridging the gap between recipe discovery and execution.
+## 📑 Table of Contents
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies](#technologies)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Demo Examples](#demo-examples)
+- [Deployment](#deployment)
 
-URL: https://ykim25umbc.github.io/Group-G/ 
 ---
+
+## 🧠 Introduction
+The **AI-Powered Deli & Liquor Store Management System** streamlines daily retail operations by integrating inventory management, pricing automation, and invoice analysis into a single intelligent platform.  
+Using **AI models**, **Streamlit UI**, and **MCP servers**, the system helps businesses:
+
+- Maintain inventory levels  
+- Identify price changes from suppliers  
+- Automatically calculate shelf pricing  
+- Track location of products  
+- Scale operations across multiple stores
+
+---
+
+## 🚀 Features
+- **AI-Powered Inventory Lookup**  
+  Instantly find product details and in-store locations.
+
+- **Automated Price Change Detection**  
+  Upload supplier invoices to detect increases (e.g., “12% increase detected”).
+
+- **Dynamic Price Calculation**  
+  Add new products with auto-generated retail pricing.
+
+- **MCP-Based Microservices**  
+  Run AI logic in isolated servers for scalable, secure operations.
+
+- **Cross-Platform Deployment**  
+  Supports local, Docker-based, and cloud production environments.
+
+---
+
+## 🧰 Technologies
+- **Streamlit** — Web application interface  
+- **SQLite** — Default local database  
+- **PostgreSQL** — Recommended for production  
+- **Docker** — Containerization of MCP servers  
+- **Python 3.8+** — Backend logic and AI tools  
+- **MCP** — Model Context Protocol architecture
+
+---
+
+## 📦 Prerequisites
+
+### **1. Install Python 3.8+**
+- Download from python.org  
+- Check **“Add Python to PATH”** during installation
+
+### **2. Install Required Python Packages**
+```bash
+pip install streamlit pandas sqlite3
+**Local Deployment:**
+```bash
+streamlit run app.py
