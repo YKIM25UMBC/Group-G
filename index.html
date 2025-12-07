@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Chefs Digital Cookbook</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial, sans-serif; background: #fafaff; color: #232940; padding: 2em; }
+    h1 { color: #337ab7; }
+    h2 { margin-top: 1.5em; }
+    .section { margin-bottom: 2em; }
+    a { color: #337ab7; text-decoration: underline; }
+    table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+    th, td { border: 1px solid #ccc; padding: 0.4em 0.6em; }
+    th { background: #e4e8f3; }
+    .features li { margin-bottom: 0.3em; }
+    .db-table { font-size: 0.96em; }
+    .code-block { background: #f3f4fa; border: 1px solid #d3d4e0; border-radius: 6px; padding: 0.7em 1em; margin: 1em 0; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <h1>The Chefs: Digital Cookbook Project</h1>
+  <div class="section">
+    <h2>Project Overview</h2>
+    <p>
+      <b>Digital Cookbook</b> is an integrated recipe management system designed for home chefs who discover new cooking ideas on short-form video platforms, especially TikTok.<br>
+      The platform streamlines the process from recipe discovery to cooking and shopping by automatically extracting recipe details, saving and organizing them, and creating unified grocery lists.<br>
+      Our goal is to eliminate the hassle of manual note-taking, fragmented organization, and inefficient grocery shopping by providing a seamless, automated experience.
+    </p>
+  </div>
+  <div class="section">
+    <h2>Main Links</h2>
+    <ul>
+      <li>Project GitHub Repository:
+        <a href="https://github.com/YKIM25UMBC/Group-G" target="_blank">Group-G</a>
+      </li>
+      <li>GitHub Project Board / Timeline:
+        <a href="https://github.com/users/YKIM25UMBC/projects/6" target="_blank">Project Board</a>
+      </li>
+    </ul>
+  </div>
+  <div class="section">
+    <h2>Team Members</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Role</th>
+        <th>GitHub</th>
+      </tr>
+      <tr><td>Jennah Rashed</td>     <td>Project Manager</td>         <td>juniorrash-d</td></tr>
+      <tr><td>Gabriela Corea</td>    <td>UX/UI Designer</td>          <td>gabrielacorea</td></tr>
+      <tr><td>Eiman Babar</td>       <td>Business Analyst</td>        <td>eimanbabar6</td></tr>
+      <tr><td>Christopher Ajayi</td> <td>DevOps Engineer</td>         <td>cajayi1</td></tr>
+      <tr><td>Drew Beall</td>        <td>Backend Developer</td>       <td>drewbeall</td></tr>
+      <tr><td>Young Kim</td>         <td>Quality Assurance</td>       <td>ykim25umbc</td></tr>
+    </table>
+  </div>
+  <div class="section">
+    <h2>Key Features</h2>
+    <ul class="features">
+      <li><b>Auto-extract recipe</b>: Paste a TikTok link to automatically extract recipe title, ingredients, and instructions using AI.</li>
+      <li><b>Edit recipes</b>: Users can review and customize auto-generated recipes for accuracy and personalization.</li>
+      <li><b>Organized cookbook</b>: Recipes are saved in a searchable, categorized library with filtering options.</li>
+      <li><b>Grocery list integration</b>: Instantly create a unified grocery list from selected recipes, with duplicate ingredients merged.</li>
+      <li><b>Secure account management</b>: Register, log in/out, and manage personal recipes and lists safely.</li>
+      <li><b>Mobile-friendly</b>: All features are optimized for use in the kitchen on modern browsers and mobile devices.</li>
+      <li><b>Original video linking</b>: Each recipe card preserves the original TikTok video for easy reference and creator attribution.</li>
+    </ul>
+  </div>
+  <div class="section">
+    <h2>Database Overview</h2>
+    <ul>
+      <li><b>Database Type:</b> PostgreSQL (running in Docker containers)</li>
+      <li><b>Main tables:</b> users, recipes, ingredients, categories, grocery_lists, grocery_list_items</li>
+    </ul>
+    <div class="code-block">
+      <b>Excerpt from <code>docker-compose.yml</code>:</b><br>
+      <pre>
+services:
+  db:
+    image: postgres:15
+    container_name: digitalcookbookdb
+    environment:
+      POSTGRES_USER: chefuser
+      POSTGRES_PASSWORD: cookbook123
+      POSTGRES_DB: digitalcookbook
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./init-db:/docker-entrypoint-initdb.d
+      </pre>
+    </div>
+    <table class="db-table">
+      <tr><th>Table</th><th>Purpose</th></tr>
+      <tr><td>users</td><td>User authentication and profile management (username, email, password hash)</td></tr>
+      <tr><td>categories</td><td>Recipe grouping and user-created categories</td></tr>
+      <tr><td>recipes</td><td>Recipe information, TikTok URL, description, and metadata</td></tr>
+      <tr><td>ingredients</td><td>Ingredients for each recipe</td></tr>
+      <tr><td>grocery_lists</td><td>User-created shopping lists</td></tr>
+      <tr><td>grocery_list_items</td><td>Individual ingredients included in grocery lists</td></tr>
+    </table>
+    <p>
+      See <b>01_create_tables.sql</b> for the full schema, <b>02_insert_data.sql</b> for sample data.<br>
+      For setup and usage details, see <b>README.md</b>.
+    </p>
+  </div>
+  <footer>
+    <hr>
+    <small>Digital Cookbook - IS436 Team Project (2025)</small>
+  </footer>
+</body>
+</html>

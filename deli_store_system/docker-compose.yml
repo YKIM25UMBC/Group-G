@@ -1,0 +1,17 @@
+# Run with: docker-compose up -d
+version: '3.8'
+services:
+  inventory-mcp:
+    build: ./inventory_mcp
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./data:/app/data
+  
+  pricing-mcp:
+    build: ./pricing_mcp
+    ports:
+      - "8002:8002"
+    volumes:
+      - ./data:/app/data
+      - ./invoices:/app/invoices
