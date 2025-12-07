@@ -59,7 +59,7 @@ aboutLink.addEventListener("click", (e) => {
 groupLink.addEventListener("click", (e) => {
     e.preventDefault();
     modalTitle.textContent = "Group Members";
-    modalText.innerHTML = "Jennah Rashed – Project Manager<br>Gabriela Corea – UX/UI Designer<br>Eiman Babar – Business Analyst<br>Christopher Ajayi – DevOps Engineer<br>Drew Beall – Backend Developer<br>";
+    modalText.innerHTML = "Jennah Rashed – Project Manager<br>Gabriela Corea – UX/UI Designer<br>Eiman Babar – Business Analyst<br>Christopher Ajayi – DevOps Engineer<br>Drew Beall – Backend Developer<br>Young Kim - Quality Assurance<br>";
     infoModal.style.display = "flex";
 });
 
