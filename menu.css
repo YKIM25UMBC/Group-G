@@ -1,0 +1,49 @@
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    color: white;
+    padding-top: 60px;
+    padding-left: 20px;
+    transition: 0.3s;
+    z-index: 9999;
+}
+
+.side-menu a {
+    display: block;
+    margin: 15px 0;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.side-menu a:hover {
+    text-decoration: underline;
+}
+
+.menu-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+/* menu button  */
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 32px;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 9999;
+}

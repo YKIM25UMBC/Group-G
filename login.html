@@ -1,0 +1,128 @@
+<!-- This is the Login page where users can login into their existing accounts and/or register a new account
+     The page will include a header with our groupname, a detailed explanation of our project and the group members -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBSITE WITH LOGIN & REGISTRATION</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <header>
+        <h2 class="logo">The Chefs/Group G</h2>
+        <nav class="navigation">
+            <a href="#" id="aboutLink">About</a>
+            <a href="#" id="membersLink">Group Members</a>
+        </nav>
+    </header>
+
+    <!-- the login wrapper -->
+    <div class="wrapper">
+        <div class="form-box login">
+            <h2>WELCOME BACK CHEF!</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <input type="username" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn">LOGIN</button>
+                <div class="login-register">
+                    <p>Don't have an account? Register <a href="#" class="register-link">Here!</a></p>
+                </div>
+            </form>
+        </div>
+
+        <!-- registration wrapper -->
+        <div class="form-box register">
+            <h2>Registration</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <input type="username" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box" style="position: relative;"> 
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input type="password" id="regPassword" required>
+                    <label>Password</label>
+
+                    <!-- floating password requirements tooltip -->
+                    <div id="passwordTooltip" class="password-tooltip">
+                        <p>Password must include:</p>
+                        <ul>
+                            <li id="reqLength" class="invalid">At least 8 characters</li>
+                            <li id="reqUpper" class="invalid">An uppercase letter</li>
+                            <li id="reqLower" class="invalid">A lowercase letter</li>
+                            <li id="reqNumber" class="invalid">A number</li>
+                            <li id="reqSpecial" class="invalid">A special character (!@#$%^&*)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> I agree to the Terms & Conditions.</label>
+                </div>
+                <button type="submit" class="btn">REGISTER</button>
+                <div class="login-register">
+                    <p>Already have an account? Login <a href="#" class="login-link">Here!</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- modal overlay -->
+     <!-- this is for our 'About' and group member sections -->
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="closeBtn">&times;</span>
+            <h2 id="modalTitle">Title</h2>
+            <p id="modalText">Content goes here...</p>
+        </div>
+    </div>
+
+    <!-- scripts -->
+    <script src="login.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        // password tooltip functionality
+        // its pretty much just visual validation for the user 
+        const passwordInput = document.getElementById("regPassword");
+        const tooltip = document.getElementById("passwordTooltip");
+
+        passwordInput.addEventListener("focus", () => { tooltip.style.display = "block"; });
+        passwordInput.addEventListener("blur", () => { tooltip.style.display = "none"; });
+
+        passwordInput.addEventListener("input", () => {
+            const val = passwordInput.value;
+            document.getElementById("reqLength").className = val.length >= 8 ? "valid" : "invalid";
+            document.getElementById("reqUpper").className = /[A-Z]/.test(val) ? "valid" : "invalid";
+            document.getElementById("reqLower").className = /[a-z]/.test(val) ? "valid" : "invalid";
+            document.getElementById("reqNumber").className = /\d/.test(val) ? "valid" : "invalid";
+            document.getElementById("reqSpecial").className = /[!@#$%^&*]/.test(val) ? "valid" : "invalid";
+        });
+    </script>
+</body>
+
+</html>

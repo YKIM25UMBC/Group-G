@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Recipe</title>
+    <link rel="stylesheet" href="recipe.css">
+    <script defer src="menu.js"></script>
+    <script defer src="editrecipe.js"></script>
+</head>
+<body>
+
+    <header class="top-nav">
+        <h2 class="logo">The Chefs / Group G</h2>
+        <nav class="menu-container">
+            <button class="menu-btn">MENU ▾</button>
+            <div class="dropdown-menu">
+                <a href="home.html">Home</a>
+                <a href="saved.html">View Saved Recipes</a>
+                <a href="grocery.html">Grocery List</a>
+                <a href="login.html">Logout</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="book-cover">
+        <div class="open-book">
+            
+            <div class="page left-page">
+                <h1>Edit Recipe</h1>
+
+                <div class="edit-group">
+                    <label for="videoURL">Video URL:</label>
+                    <input type="text" id="videoURL" class="edit-input" placeholder="Paste link here...">
+                </div>
+
+                <h2>Ingredients</h2>
+                <ul id="ingredientsList" class="edit-list"></ul>
+                
+                <button id="addIngredientBtn" class="action-btn small-btn">+ Add Ingredient</button>
+            </div>
+
+            <div class="page right-page">
+                <h2>Steps</h2>
+                <ul id="stepsList" class="edit-list"></ul>
+                
+                <button id="addStepBtn" class="action-btn small-btn">+ Add Step</button>
+
+                <div class="edit-buttons-container">
+                    <button id="saveChangesBtn" class="action-btn save-btn">Save Changes</button>
+                    <button id="cancelEditBtn" class="action-btn cancel-btn">Cancel</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

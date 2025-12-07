@@ -1,0 +1,61 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOMEPAGE</title>
+
+    <link rel="stylesheet" href="home.css">
+
+    <script defer src="menu.js"></script>
+    <script defer src="home.js"></script>
+</head>
+
+<body>
+
+    <!-- navigation -->
+    <header class="top-nav">
+        <h2 class="logo">The Chefs / Group G</h2>
+
+        <!-- menu container wraps button + dropdown -->
+        <div class="menu-container">
+            <a href="#" class="menu-btn">MENU</a>
+
+            <div class="dropdown-menu">
+                <a href="home.html">Home</a>
+                <a href="saved.html">Saved Recipes</a>
+                <a href="grocery.html">Grocery List</a>
+                <a href="login.html">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="home-container">
+        <h1>Enter Recipe Details</h1>
+    
+        <div class="input-group">
+            <input type="text" id="recipeNameInput" placeholder="Recipe Name (ex. Shrimp Pasta)">
+    
+            <input type="text" id="tiktokInput" placeholder="Paste TikTok URL here...">
+    
+            <select id="recipeCategory">
+                <option value="Dinner">Dinner</option>
+                <option value="Breakfast">Breakfast</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Dessert">Dessert</option>
+                <option value="Snack">Snack</option>
+            </select>
+    
+            <button id="extractBtn">EXTRACT RECIPE</button>
+        </div>
+    </div>
+   
+
+</body>
+
+</html>

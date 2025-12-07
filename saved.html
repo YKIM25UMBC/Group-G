@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Recipes</title>
+    <link rel="stylesheet" href="saved.css">
+    <script defer src="menu.js"></script>
+    <script defer src="saved.js"></script>
+</head>
+<body>
+
+    <header class="top-nav">
+        <h2 class="logo">The Chefs / Group G</h2>
+        <nav class="menu-container">
+            <button class="menu-btn">MENU ▾</button>
+            <div class="dropdown-menu">
+                <a href="home.html">Home</a>
+                <a href="saved.html">View Saved Recipes</a>
+                <a href="grocery.html">Grocery List</a>
+                <a href="login.html" id="logout-btn">Logout</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="notepad-container">
+        <h1>Saved Recipes</h1>
+
+        <div class="search-group">
+            <input type="text" id="searchInput" placeholder="Search keywords...">
+            
+            <select id="categoryFilter">
+                <option value="">All Categories</option>
+                <option value="Breakfast">Breakfast</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Dinner">Dinner</option>
+                <option value="Dessert">Dessert</option>
+                <option value="Snack">Snack</option>
+            </select>
+            
+            <button id="searchBtn">SEARCH</button>
+        </div>
+
+        <ul id="recipeList">
+            </ul>
+        
+        <p id="noResults">No recipes found.</p>
+
+    </section>
+
+</body>
+</html>

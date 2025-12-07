@@ -1,0 +1,375 @@
+/* This file is for the login style. */
+
+/* import font */ 
+@import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Jersey 25', sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+/* BODY LAYOUT */
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Background */
+    background: url('pixel.jpeg') center center no-repeat fixed;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px; 
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.6); 
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid #5d4037;
+}
+
+.logo {
+    font-size: 2em;
+    color: #efe0c9; 
+    user-select: none;
+    font-family: 'Courier New', monospace; 
+    text-shadow: 2px 2px 0 #000;
+}
+
+/* NAVIGATION LINKS */
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #efe0c9; 
+    text-decoration: none;
+    font-weight: 800;
+    margin-left: 40px;
+    font-family: 'Courier New', monospace;
+    text-shadow: 1px 1px 0 #000;
+}
+.navigation a:hover {
+    color: #fff;
+}
+
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px; 
+    border-radius: 0; 
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+.navigation a:hover::after {
+    transform: scaleX(1);
+}
+
+
+
+
+/* LOGIN BUTTON */
+.navigation .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #efe0c9; 
+    outline: none;
+    border-radius: 6px; 
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #efe0c9;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+    font-family: 'Courier New', monospace;
+}
+.navigation .btnLogin-popup:hover {
+    background: #efe0c9;
+    color: #2c1e14; 
+}
+
+/* This card holds the login and registration forms. It'll also handle the sliding logic
+so it'll look modern. */ 
+.wrapper{
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255,255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    overflow: hidden; 
+    transition: height .2s ease;
+}
+
+/* ACTIVE = SWITCHING TO REGISTER MODE, in case of any errors, check this class!!! */
+.wrapper.active{
+    min-height: 520px;
+
+}
+.wrapper .form-box {
+    width: 100%;
+    height: 110%;
+   padding: 40px;
+   box-sizing: border-box;
+}
+
+/* This is just the sliding animation logic */ 
+.wrapper .form-box.login{
+    /*display: none;*/
+    transition: transform .3s ease;
+    transform: translateX(0);
+}
+.wrapper.active .form-box.login {
+    transform: translateX(-400px);
+}
+
+.wrapper .form-box.register {
+    position: absolute;
+    transform: translateX(400px);
+    transition: transform .3s ease;
+    height: auto;  
+    padding-bottom: 20px; 
+}
+
+.wrapper.active .form-box.register {
+    transform: translateX(0);
+}
+
+/* the modal overlay, just the about + group member logic*/
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+    backdrop-filter: blur(10px); 
+    justify-content: center;
+    align-items: center;
+}
+
+/* modal content styled like wrapper */
+.modal-content {
+    background: rgba(255, 255, 255, 0.2); 
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(20px); 
+    border-radius: 20px;
+    width: 80%; 
+    max-width: 450px;
+    padding: 30px 25px;
+    text-align: center;
+    color: #efe0c9;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+/* close button */
+.closeBtn {
+    color: #333;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.closeBtn:hover {
+    color: #a84b4b;
+}
+
+.modal h2 {
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+.modal p {
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+/* 1. Main Headings ("Login") */
+.form-box h2 {
+    font-size: 2em;
+    color: #efe0c9; 
+    text-align: center;
+    text-shadow: 2px 2px 0 #000; 
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom:2px solid #efe0c9;
+    margin: 30px 0;
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translate(-50%);
+    font-size: 1em;
+    color: #efe0c9;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #efe0c9;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+
+
+}
+
+.input-box .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #efe0c9;
+    line-height: 57px;
+
+
+}
+
+/* these are the typical 'forgot pass or remember me you see on most login sites */
+/* These are purely for aesthetic and unless we have time then we can make them functional */ 
+
+.remember-forgot{
+    font-size: .9em;
+    color: #efe0c9;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input{
+    accent-color: #efe0c9;
+    margin-right: 3px;
+
+}
+
+.remember-forgot a {
+    color: #efe0c9;
+    text-decoration: none;
+
+}
+.remember-forgot a:hover{
+    text-decoration: underline;
+
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background: rgb(134, 41, 52);
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+
+.login-register{
+    font-size: .9em;
+    color: #efe0c9;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+    
+}
+
+.login-register p a{
+    color: #efe0c9;
+    text-decoration: none;
+    font-weight: 600;
+
+}
+
+.login-register p  a:hover{
+    text-decoration: underline;
+
+}
+
+.password-requirements ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 0.9em;
+    color: white;
+}
+
+.password-requirements li.valid {
+    color: green;
+    font-weight: bold;
+}
+
+.password-requirements li.invalid {
+    color: red;
+}
+
+/* floating password tooltip */
+.password-tooltip {
+    position: fixed; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(0, 0); 
+    width: 220px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    display: none;
+    font-size: 0.85em;
+    z-index: 999;
+}
+
+.password-tooltip li.valid { color: green; }
+.password-tooltip li.invalid { color: red; }
+
+@media (max-width: 500px) {
+    .password-tooltip {
+        top: 110%; 
+        left: 0;
+        width: 100%;
+    }
+}

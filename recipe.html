@@ -1,0 +1,84 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Result</title>
+    <link rel="stylesheet" href="recipe.css">
+    <script defer src="menu.js"></script>
+    <script defer src="recipe.js"></script>
+</head>
+
+<body>
+
+  <header class="top-nav">
+      <h2 class="logo">The Chefs / Group G</h2>
+      <nav class="menu-container">
+          <button class="menu-btn">MENU ▾</button>
+          <div class="dropdown-menu">
+              <a href="home.html">Home</a>
+              <a href="saved.html">Saved Recipes</a>
+              <a href="grocery.html">Grocery List</a>
+              <a href="login.html">Logout</a>
+          </div>
+      </nav>
+  </header>
+
+  <div class="book-cover">
+    
+    <div class="open-book">
+        
+        <div class="page left-page">
+            
+            <h1>Extracted Recipe</h1>
+            
+            <div class="book-meta">
+                <p><strong>URL:</strong> <a id="videoLink" href="#">Loading...</a></p>
+                <p><strong>Category:</strong> <span id="recipeCategoryDisplay">...</span></p>
+            </div>
+
+            <div class="ingredients-section">
+              <h2>Ingredients</h2>
+              <ul id="ingredientsList">
+                  <li>Loading ingredients...</li>
+              </ul>
+          </div>
+        </div>
+        <div class="page right-page">
+    
+          <div class="steps-header">
+              <h2>Steps</h2>
+              <button id="editRecipeBtn">EDIT RECIPE</button>
+          </div>
+      
+          <div class="photo-frame">
+              <img id="thumbnail" src="" alt="Thumbnail" style="display:none;"> 
+          </div>
+      
+          <ol id="stepsList">
+              <li>Loading steps...</li>
+          </ol>
+      </div>
+
+    </div>
+</div>
+      </div>
+  </div>
+
+  <script src="recipe.js"></script>
+</body>
+</html>
+
+
+<script>
+  
+  const buttons = document.querySelectorAll('.add-btn');
+  buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+          btn.classList.toggle('added'); 
+      });
+  });
+</script>
